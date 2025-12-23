@@ -3,30 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Airbnb Market Insights Dashboard</title>
+
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
         }
-        h1, h2 {
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            background-color: #ffffff;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #e74c3c;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
             color: #2c3e50;
         }
-        a {
-            color: #1f77b4;
-            text-decoration: none;
+
+        header p {
+            color: #7f8c8d;
+            font-size: 16px;
         }
-        a:hover {
-            text-decoration: underline;
+
+        h2 {
+            color: #e74c3c;
+            margin-bottom: 10px;
         }
+
         .section {
             margin-bottom: 30px;
         }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: #ffffff;
+            background-color: #e74c3c;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        a:hover {
+            background-color: #c0392b;
+        }
+
+        .tools li {
+            background-color: #ecf0f1;
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 5px 5px 0 0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
     </style>
 </head>
+
 <body>
 
-    <h1>Airbnb Market Insights: Pricing, Demand & Trends</h1>
+<div class="container">
+
+    <header>
+        <h1>Airbnb Market Insights</h1>
+        <p>Pricing, Demand & Trends Dashboard</p>
+    </header>
 
     <div class="section">
         <h2>Team Members</h2>
@@ -40,27 +104,27 @@
         <h2>Project Description</h2>
         <p>
             This project presents an interactive data visualization dashboard developed using Tableau.
-            The objective of the project is to analyze Airbnb listings data to uncover insights related
-            to pricing patterns, availability, demand indicators, and neighborhood-level variations.
-            The dashboard enables users to explore different market dynamics through interactive
-            filters and visual elements.
+            The objective is to analyze Airbnb listings data to uncover insights related to pricing
+            patterns, availability, demand indicators, and neighborhood-level variations.
+            The dashboard enables users to explore market dynamics through interactive filters and
+            visual elements.
         </p>
     </div>
 
     <div class="section">
         <h2>Dataset Description</h2>
         <p>
-            The dataset used in this project was obtained from the Inside Airbnb open data platform.
-            It consists of two primary CSV files: listings data and reviews data.
-            The listings dataset includes information such as price, room type, availability,
-            host details, and geographic coordinates, while the reviews dataset provides
-            time-based information used to analyze demand trends and seasonality.
+            The dataset was obtained from the Inside Airbnb open data platform and consists of two
+            primary CSV files: listings data and reviews data.
+            The listings dataset includes pricing, room type, availability, host details, and
+            geographic coordinates, while the reviews dataset provides time-based information
+            used for demand and seasonality analysis.
         </p>
     </div>
 
     <div class="section">
         <h2>Tools and Technologies Used</h2>
-        <ul>
+        <ul class="tools">
             <li>Tableau Public</li>
             <li>GitHub Pages</li>
             <li>CSV Data (Inside Airbnb)</li>
@@ -69,24 +133,25 @@
 
     <div class="section">
         <h2>Interactive Dashboard</h2>
-        <p>
-            <strong>Tableau Public Link:</strong><br>
-            <a href="https://public.tableau.com/views/AirbnbNewYorkCity_17665244940200/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">
-                View Interactive Dashboard
-            </a>
-        </p>
+        <a href="https://public.tableau.com/views/AirbnbNewYorkCity_17665244940200/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link" target="_blank">
+            View Tableau Dashboard
+        </a>
     </div>
 
     <div class="section">
         <h2>Video Walkthrough</h2>
-        <p>
-            <strong>Dashboard Demonstration Video:</strong><br>
-            <a href="PASTE_YOUR_VIDEO_LINK_HERE" target="_blank">
-                Watch Video Walkthrough
-            </a>
-        </p>
+        <a href="PASTE_YOUR_VIDEO_LINK_HERE" target="_blank">
+            Watch Dashboard Walkthrough
+        </a>
     </div>
+
+    <footer>
+        <p>Academic Project | Data Visualization with Tableau</p>
+    </footer>
+
+</div>
 
 </body>
 </html>
+
 
