@@ -51,7 +51,7 @@ Interactive Tableau dashboard analyzing Airbnb listings in New York City (2019).
 
 ## Video Walkthrough
 🔗 Dashboard Demonstration Video:  
-(Add your video link here)  
+[**Demonstration** ](https://drive.google.com/file/d/1Obu8d2yQio1u8E2NqE6ukK0VrTBIrvZS/view?usp=sharing) 
 
 ---
 ## 🎯 Conclusion
