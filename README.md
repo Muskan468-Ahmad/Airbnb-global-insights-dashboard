@@ -1,50 +1,52 @@
-# Airbnb Market Insights: Pricing, Demand & Trends
+# Airbnb NYC Analysis Dashboard
 
-## Project Overview
-This project presents an interactive Tableau dashboard developed to analyze Airbnb listings and reviews data. The objective is to explore pricing patterns, availability, demand trends, and neighborhood-level variations within the Airbnb market using data visualization and storytelling techniques.
+## 📊 Project Overview
+Interactive Tableau dashboard analyzing Airbnb listings in New York City (2019). Visualizes pricing trends, neighborhood analysis, and host performance across 5 boroughs.
 
-The dashboard allows users to interactively explore insights through filters, maps, and temporal visualizations, helping to understand how different factors influence Airbnb listings.
+**Live Dashboard:** [View on Tableau Public](https://public.tableau.com/views/AirbnbNewYorkCity_17665244940200/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
----
+## 📁 Dataset
+- **File:** `AB_NYC_2019.csv`
+- **Size:** ~48,000 listings
+- **Source:** Inside Airbnb
+- **Features:** Price, neighborhood, room type, reviews, availability, location
 
-## Team Members
-- Muskan Ahmad (2022468)
-- Kaneez e Zahra (2022245)
+## 📈 Dashboard Features
+- **Geographic Map** - Listing locations across NYC
+- **Dual-Axis Chart** - Price vs. reviews comparison
+- **Donut Chart** - Room type distribution
+- **Top 10 Hosts Table** - Most active hosts
+- **Treemap** - Neighborhood listing density
+- **Horizontal Bar Charts** - Ranking visualizations
+- **Highlight Table** - Heatmap data view
+- **Interactive Filters** - Borough, price, room type
 
----
+## 🛠️ Tools Used
+- Tableau Desktop/Public
+- CSV Data Processing
+- HTML/CSS for documentation
 
-## Dataset Description
-The dataset used in this project was obtained from the **Inside Airbnb** open data platform.
+## 🚀 How to Use
+1. **Online:** Visit the Tableau Public link above
+2. **Interact:** Use filters on the right side
+3. **Explore:** Hover over charts for details
+4. **Filter:** Select boroughs, price ranges, room types
 
-Two CSV files were utilized:
-- **Listings Dataset:** Contains information about Airbnb listings including price, room type, availability, host details, and geographic location.
-- **Reviews Dataset:** Contains time-based review data used to analyze demand trends and seasonality.
+## 📊 Key Insights
+- **Manhattan** has highest average prices
+- **Brooklyn** has most listings
+- **Entire homes** are most expensive
+- **Top hosts** manage 100+ properties
+- **Availability** varies by season and location
 
-These datasets enable both spatial and temporal analysis of Airbnb market dynamics.
+## 👥 Team
+- **Muskan Ahmad** (2022468)
+- **Kaneez e Zahra** (2022245)
 
----
-
-## Tools and Technologies
-- Tableau Public
-- GitHub Pages
-- CSV datasets (Inside Airbnb)
-
----
-
-## Dashboard Features
-- Interactive maps showing listing distribution
-- Price and availability analysis
-- Demand analysis using review trends
-- Filters for dynamic exploration
-- Temporal visualizations for seasonality insights
-
----
-
-## Live Dashboard
-🔗 Tableau Public Dashboard:  
-[(Add your public Tableau dashboard link here)](https://public.tableau.com/views/AirbnbNewYorkCity_17665244940200/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-
----
+## 📚 Project Info
+**Course:** Data Visualization  
+**University:** [Your University]  
+**Date:** December 2024
 
 ## Project Webpage
 🔗 GitHub Pages Site:  
