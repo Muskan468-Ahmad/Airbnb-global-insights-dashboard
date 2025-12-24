@@ -45,28 +45,16 @@ Interactive Tableau dashboard analyzing Airbnb listings in New York City (2019).
 
 ## 📚 Project Info
 **Course:** Data Visualization  
-**University:** [Your University]  
-**Date:** December 2024
+**University:** GIKI  
+**Date:** 24 December 2024
 
-## Project Webpage
-🔗 GitHub Pages Site:  
-(Add your GitHub.io link here)
-
----
 
 ## Video Walkthrough
 🔗 Dashboard Demonstration Video:  
-(Add your video link here)
+(Add your video link here)  
 
 ---
+## 🎯 Conclusion
 
-## Project Structure
-- `index.html` – Project webpage hosted using GitHub Pages  
-- `README.md` – Project documentation  
-- `Tableau Dashboard` – Hosted on Tableau Public  
-
----
-
-## Conclusion
-This project demonstrates how interactive data visualization can be used to uncover meaningful insights from real-world datasets. By combining spatial, temporal, and analytical views, the dashboard provides a comprehensive understanding of Airbnb market trends.
+This Airbnb NYC Market Analysis Dashboard successfully provides comprehensive insights into New York City's short-term rental market using 2019 data. Through interactive visualizations and data-driven analysis, the project reveals clear patterns in pricing, availability, and distribution across boroughs and neighborhoods.
 
