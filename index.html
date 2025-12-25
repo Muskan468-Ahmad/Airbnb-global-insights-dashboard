@@ -9,47 +9,48 @@
         body {
             font-family: "Segoe UI", Tahoma, Arial, sans-serif;
             margin: 0;
-            background-color: #f4f6f8;
-            color: #333;
+            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+            color: #2c2c2c;
             line-height: 1.6;
         }
 
         .container {
             max-width: 1000px;
-            margin: auto;
+            margin: 40px auto;
             padding: 40px;
             background-color: #ffffff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border-radius: 14px;
         }
 
         header {
             text-align: center;
             padding-bottom: 30px;
-            border-bottom: 3px solid #ff5a5f;
+            border-bottom: 4px solid #6c5ce7;
             margin-bottom: 40px;
         }
 
         header h1 {
             margin: 0;
-            color: #2c3e50;
-            font-size: 36px;
+            color: #2d3436;
+            font-size: 38px;
         }
 
         header p {
-            color: #7f8c8d;
+            color: #636e72;
             font-size: 18px;
             margin-top: 10px;
         }
 
         h2 {
-            color: #ff5a5f;
+            color: #6c5ce7;
             margin-bottom: 15px;
             padding-bottom: 8px;
-            border-bottom: 2px solid #ecf0f1;
+            border-bottom: 2px solid #ececff;
         }
 
         h3 {
-            color: #3498db;
+            color: #00b894;
             margin-top: 25px;
             margin-bottom: 10px;
         }
@@ -73,41 +74,41 @@
         }
 
         .chart-list li {
-            background-color: #f8f9fa;
-            padding: 8px 12px;
-            margin-bottom: 8px;
-            border-radius: 4px;
-            border-left: 4px solid #3498db;
+            background: linear-gradient(135deg, #f1f2ff, #eef9f6);
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 5px solid #00cec9;
             break-inside: avoid;
+            font-weight: 500;
         }
 
         .btn {
             color: #ffffff;
-            background-color: #ff5a5f;
-            padding: 12px 25px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #ff7675, #e84393);
+            padding: 12px 28px;
+            border-radius: 30px;
             text-decoration: none;
             display: inline-block;
             margin-top: 10px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #e53e42;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(232, 67, 147, 0.4);
         }
 
         .btn-secondary {
-            background-color: #3498db;
+            background: linear-gradient(135deg, #0984e3, #6c5ce7);
             margin-left: 15px;
         }
 
         .btn-secondary:hover {
-            background-color: #2980b9;
+            box-shadow: 0 8px 18px rgba(108, 92, 231, 0.4);
         }
 
         .tools {
@@ -118,18 +119,19 @@
         }
 
         .tool-tag {
-            background-color: #ecf0f1;
-            padding: 8px 15px;
-            border-radius: 4px;
+            background-color: #f1f2ff;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
+            color: #6c5ce7;
         }
 
         .highlight {
-            background-color: #fff8e1;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #ffc107;
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 5px solid #fdcb6e;
             margin: 20px 0;
         }
 
@@ -141,52 +143,44 @@
         }
 
         .kpi-box {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #f8f9ff, #f1f7ff);
+            padding: 18px;
+            border-radius: 10px;
             flex: 1;
             min-width: 200px;
-            border-top: 4px solid #ff5a5f;
+            border-top: 4px solid #ff7675;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .kpi-title {
             font-weight: bold;
-            color: #2c3e50;
+            color: #2d3436;
             margin-bottom: 5px;
         }
 
         .kpi-value {
-            font-size: 18px;
-            color: #ff5a5f;
+            font-size: 20px;
+            color: #e84393;
         }
 
         footer {
             text-align: center;
             font-size: 14px;
-            color: #7f8c8d;
+            color: #636e72;
             margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid #ddd;
-        }
-
-        .github-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 15px;
-            color: #333;
-            text-decoration: none;
         }
 
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
             }
-            
+
             .chart-list {
                 columns: 1;
             }
-            
+
             .kpis {
                 flex-direction: column;
             }
@@ -220,7 +214,7 @@
             hosts, travelers, and market analysts to make data-driven decisions through intuitive visual 
             exploration.
         </p>
-        
+
         <div class="highlight">
             <h3>Key Objectives:</h3>
             <ul>
@@ -239,7 +233,7 @@
             The dataset used is <strong>AB_NYC_2019.csv</strong> from Inside Airbnb, containing detailed 
             information about Airbnb listings in New York City as of 2019.
         </p>
-        
+
         <h3>Key Data Points:</h3>
         <div class="kpis">
             <div class="kpi-box">
@@ -259,7 +253,7 @@
                 <div class="kpi-value">16+</div>
             </div>
         </div>
-        
+
         <p><strong>Main Features Include:</strong> Price, Neighborhood, Room Type, Minimum Nights, 
         Number of Reviews, Availability, Host Details, and Geographic Coordinates.</p>
     </div>
@@ -296,13 +290,16 @@
     <div class="section">
         <h2>Access the Dashboard</h2>
         <p>Explore the interactive Tableau dashboard with full filtering capabilities:</p>
+
         <a href="https://public.tableau.com/views/AirbnbNewYorkCity_17665244940200/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link" 
            target="_blank" class="btn">
             🗽 View Interactive Dashboard
         </a>
-        
+
         <p style="margin-top: 20px;">For more details about the project structure and methodology:</p>
-        <a href="https://github.com/Muskan468-Ahmad/Airbnb-global-insights-dashboard" target="_blank" class="btn btn-secondary">
+
+        <a href="https://github.com/Muskan468-Ahmad/Airbnb-global-insights-dashboard" 
+           target="_blank" class="btn btn-secondary">
             📂 View Project Repository
         </a>
     </div>
@@ -317,5 +314,7 @@
 
 </body>
 </html>
+
+
 
 
