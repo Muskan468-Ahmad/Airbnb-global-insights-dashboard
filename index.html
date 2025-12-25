@@ -1,319 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airbnb NYC Market Analysis Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airbnb NYC Market Analysis Dashboard</title>
 
-    <style>
-        body {
-            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
-            color: #2c2c2c;
-            line-height: 1.6;
-        }
+<style>
+    body {
+        font-family: "Poppins", "Segoe UI", sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #667eea, #764ba2, #43cea2);
+        background-size: 300% 300%;
+        animation: gradientBG 12s ease infinite;
+        color: #2d3436;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 40px;
-            background-color: #ffffff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            border-radius: 14px;
-        }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-        header {
-            text-align: center;
-            padding-bottom: 30px;
-            border-bottom: 4px solid #6c5ce7;
-            margin-bottom: 40px;
-        }
+    .container {
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 45px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border-radius: 18px;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    }
 
-        header h1 {
-            margin: 0;
-            color: #2d3436;
-            font-size: 38px;
-        }
+    header {
+        text-align: center;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+        border-bottom: 4px solid transparent;
+        border-image: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
+        border-image-slice: 1;
+    }
 
-        header p {
-            color: #636e72;
-            font-size: 18px;
-            margin-top: 10px;
-        }
+    header h1 {
+        font-size: 42px;
+        margin: 0;
+        background: linear-gradient(90deg, #ff6b6b, #5f27cd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-        h2 {
-            color: #6c5ce7;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #ececff;
-        }
+    header p {
+        font-size: 18px;
+        color: #576574;
+        margin-top: 12px;
+    }
 
-        h3 {
-            color: #00b894;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
+    h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+        color: #5f27cd;
+        position: relative;
+    }
 
-        .section {
-            margin-bottom: 40px;
-        }
+    h2::after {
+        content: "";
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b6b, #48dbfb);
+        display: block;
+        margin-top: 6px;
+        border-radius: 10px;
+    }
 
-        ul {
-            padding-left: 20px;
-        }
+    h3 {
+        color: #10ac84;
+        margin-top: 25px;
+    }
 
-        li {
-            margin-bottom: 8px;
-        }
+    .section {
+        margin-bottom: 45px;
+    }
 
+    ul {
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    .chart-list {
+        columns: 2;
+        column-gap: 35px;
+        margin-top: 20px;
+    }
+
+    .chart-list li {
+        background: linear-gradient(135deg, #f8f9ff, #eef9ff);
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        border-radius: 10px;
+        border-left: 5px solid #5f27cd;
+        font-weight: 500;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    .highlight {
+        background: linear-gradient(135deg, #fff1eb, #ace0f9);
+        padding: 22px;
+        border-radius: 14px;
+        margin-top: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .kpis {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+        margin-top: 20px;
+    }
+
+    .kpi-box {
+        background: linear-gradient(135deg, #ffffff, #f2f5ff);
+        padding: 22px;
+        border-radius: 14px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        border-top: 4px solid #ff6b6b;
+    }
+
+    .kpi-title {
+        font-weight: 600;
+        color: #576574;
+    }
+
+    .kpi-value {
+        font-size: 22px;
+        margin-top: 6px;
+        color: #5f27cd;
+        font-weight: 700;
+    }
+
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .tool-tag {
+        padding: 10px 18px;
+        background: linear-gradient(135deg, #5f27cd, #48dbfb);
+        color: white;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 14px 32px;
+        border-radius: 35px;
+        background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s ease;
+        box-shadow: 0 10px 25px rgba(255,107,107,0.4);
+    }
+
+    .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 35px rgba(255,107,107,0.55);
+    }
+
+    .btn-secondary {
+        background: linear-gradient(135deg, #48dbfb, #5f27cd);
+        margin-left: 15px;
+        box-shadow: 0 10px 25px rgba(95,39,205,0.4);
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 14px;
+        color: #636e72;
+    }
+
+    @media (max-width: 768px) {
         .chart-list {
-            columns: 2;
-            column-gap: 30px;
-            margin-top: 15px;
+            columns: 1;
         }
-
-        .chart-list li {
-            background: linear-gradient(135deg, #f1f2ff, #eef9f6);
-            padding: 10px 14px;
-            margin-bottom: 10px;
-            border-radius: 6px;
-            border-left: 5px solid #00cec9;
-            break-inside: avoid;
-            font-weight: 500;
-        }
-
-        .btn {
-            color: #ffffff;
-            background: linear-gradient(135deg, #ff7675, #e84393);
-            padding: 12px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(232, 67, 147, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #0984e3, #6c5ce7);
-            margin-left: 15px;
-        }
-
-        .btn-secondary:hover {
-            box-shadow: 0 8px 18px rgba(108, 92, 231, 0.4);
-        }
-
-        .tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .tool-tag {
-            background-color: #f1f2ff;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #6c5ce7;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, #fff8e1, #fff3cd);
-            padding: 18px;
-            border-radius: 8px;
-            border-left: 5px solid #fdcb6e;
-            margin: 20px 0;
-        }
-
-        .kpis {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .kpi-box {
-            background: linear-gradient(135deg, #f8f9ff, #f1f7ff);
-            padding: 18px;
-            border-radius: 10px;
-            flex: 1;
-            min-width: 200px;
-            border-top: 4px solid #ff7675;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .kpi-title {
-            font-weight: bold;
-            color: #2d3436;
-            margin-bottom: 5px;
-        }
-
-        .kpi-value {
-            font-size: 20px;
-            color: #e84393;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 14px;
-            color: #636e72;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            .chart-list {
-                columns: 1;
-            }
-
-            .kpis {
-                flex-direction: column;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <header>
-        <h1>Airbnb NYC Market Analysis Dashboard</h1>
-        <p>Interactive Visualization of NYC Airbnb Listings</p>
-    </header>
+<header>
+    <h1>Airbnb NYC Market Analysis Dashboard</h1>
+    <p>Interactive Visualization of NYC Airbnb Listings</p>
+</header>
 
-    <div class="section">
-        <h2>Team Members</h2>
+<div class="section">
+    <h2>Team Members</h2>
+    <ul>
+        <li><strong>Muskan Ahmad</strong> (2022468)</li>
+        <li><strong>Kaneez e Zahra</strong> (2022245)</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Project Overview</h2>
+    <p>
+        This Tableau dashboard provides a comprehensive analysis of Airbnb listings in New York City 
+        using 2019 data. The interactive visualization explores pricing dynamics, neighborhood trends, 
+        host performance, and demand indicators across NYC boroughs.
+    </p>
+
+    <div class="highlight">
+        <h3>Key Objectives:</h3>
         <ul>
-            <li><strong>Muskan Ahmad</strong> (2022468)</li>
-            <li><strong>Kaneez e Zahra</strong> (2022245)</li>
+            <li>Identify pricing patterns across different NYC neighborhoods</li>
+            <li>Analyze room type distribution and its impact on pricing</li>
+            <li>Discover top-performing hosts and their market strategies</li>
+            <li>Visualize geographic distribution of listings and prices</li>
+            <li>Understand availability and demand correlation</li>
         </ul>
     </div>
+</div>
 
-    <div class="section">
-        <h2>Project Overview</h2>
-        <p>
-            This Tableau dashboard provides a comprehensive analysis of Airbnb listings in New York City 
-            using 2019 data. The interactive visualization explores pricing dynamics, neighborhood trends, 
-            host performance, and demand indicators across NYC boroughs. The dashboard enables potential 
-            hosts, travelers, and market analysts to make data-driven decisions through intuitive visual 
-            exploration.
-        </p>
+<div class="section">
+    <h2>Dataset Information</h2>
 
-        <div class="highlight">
-            <h3>Key Objectives:</h3>
-            <ul>
-                <li>Identify pricing patterns across different NYC neighborhoods</li>
-                <li>Analyze room type distribution and its impact on pricing</li>
-                <li>Discover top-performing hosts and their market strategies</li>
-                <li>Visualize geographic distribution of listings and prices</li>
-                <li>Understand availability and demand correlation</li>
-            </ul>
+    <div class="kpis">
+        <div class="kpi-box">
+            <div class="kpi-title">Total Listings</div>
+            <div class="kpi-value">~48,000+</div>
+        </div>
+        <div class="kpi-box">
+            <div class="kpi-title">Boroughs Covered</div>
+            <div class="kpi-value">5</div>
+        </div>
+        <div class="kpi-box">
+            <div class="kpi-title">Room Types</div>
+            <div class="kpi-value">3</div>
+        </div>
+        <div class="kpi-box">
+            <div class="kpi-title">Data Features</div>
+            <div class="kpi-value">16+</div>
         </div>
     </div>
+</div>
 
-    <div class="section">
-        <h2>Dataset Information</h2>
-        <p>
-            The dataset used is <strong>AB_NYC_2019.csv</strong> from Inside Airbnb, containing detailed 
-            information about Airbnb listings in New York City as of 2019.
-        </p>
+<div class="section">
+    <h2>Dashboard Visualizations Created</h2>
+    <ul class="chart-list">
+        <li>Geographic Map</li>
+        <li>Dual-Axis Chart</li>
+        <li>Donut Chart</li>
+        <li>Top 10 Hosts Table</li>
+        <li>Stacked Bar Chart</li>
+        <li>Treemap</li>
+        <li>Highlight Table</li>
+        <li>Interactive Filters</li>
+    </ul>
+</div>
 
-        <h3>Key Data Points:</h3>
-        <div class="kpis">
-            <div class="kpi-box">
-                <div class="kpi-title">Total Listings</div>
-                <div class="kpi-value">~48,000+</div>
-            </div>
-            <div class="kpi-box">
-                <div class="kpi-title">Boroughs Covered</div>
-                <div class="kpi-value">5</div>
-            </div>
-            <div class="kpi-box">
-                <div class="kpi-title">Room Types</div>
-                <div class="kpi-value">3</div>
-            </div>
-            <div class="kpi-box">
-                <div class="kpi-title">Data Features</div>
-                <div class="kpi-value">16+</div>
-            </div>
-        </div>
-
-        <p><strong>Main Features Include:</strong> Price, Neighborhood, Room Type, Minimum Nights, 
-        Number of Reviews, Availability, Host Details, and Geographic Coordinates.</p>
+<div class="section">
+    <h2>Tools and Technologies</h2>
+    <div class="tools">
+        <div class="tool-tag">Tableau Public</div>
+        <div class="tool-tag">CSV Data</div>
+        <div class="tool-tag">HTML/CSS</div>
+        <div class="tool-tag">GitHub Pages</div>
     </div>
+</div>
 
-    <div class="section">
-        <h2>Dashboard Visualizations Created</h2>
-        <h3>Interactive Charts & Components:</h3>
-        <ul class="chart-list">
-            <li><strong>Geographic Map</strong> - Listing distribution across NYC</li>
-            <li><strong>Dual-Axis Chart</strong> - Stacked bar + line chart combination</li>
-            <li><strong>Donut Chart</strong> - Room type or borough distribution</li>
-            <li><strong>Top 10 Hosts Table</strong> - Most active hosts in NYC</li>
-            <li><strong>Horizontal Stacked Bar Chart</strong> - Multi-category comparison</li>
-            <li><strong>Bar Chart</strong> - Price distribution by category</li>
-            <li><strong>Treemap</strong> - Hierarchical data visualization</li>
-            <li><strong>Horizontal Bar Chart</strong> - Ranking visualization</li>
-            <li><strong>Highlight Table</strong> - Heatmap-style data table</li>
-            <li><strong>Text Sheets</strong> - Key metrics and KPIs</li>
-            <li><strong>Interactive Filters</strong> - Borough, room type, price range</li>
-        </ul>
-    </div>
+<div class="section">
+    <h2>Access the Dashboard</h2>
 
-    <div class="section">
-        <h2>Tools and Technologies</h2>
-        <div class="tools">
-            <div class="tool-tag">Tableau Public</div>
-            <div class="tool-tag">CSV Data Processing</div>
-            <div class="tool-tag">Data Visualization</div>
-            <div class="tool-tag">HTML/CSS</div>
-            <div class="tool-tag">GitHub Pages</div>
-        </div>
-    </div>
+    <a href="https://public.tableau.com/views/AirbnbNewYorkCity_17665244940200/Dashboard1?:language=en-US&publish=yes" 
+       target="_blank" class="btn">
+        🗽 View Interactive Dashboard
+    </a>
 
-    <div class="section">
-        <h2>Access the Dashboard</h2>
-        <p>Explore the interactive Tableau dashboard with full filtering capabilities:</p>
+    <a href="https://github.com/Muskan468-Ahmad/Airbnb-global-insights-dashboard" 
+       target="_blank" class="btn btn-secondary">
+        📂 View Project Repository
+    </a>
+</div>
 
-        <a href="https://public.tableau.com/views/AirbnbNewYorkCity_17665244940200/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link" 
-           target="_blank" class="btn">
-            🗽 View Interactive Dashboard
-        </a>
-
-        <p style="margin-top: 20px;">For more details about the project structure and methodology:</p>
-
-        <a href="https://github.com/Muskan468-Ahmad/Airbnb-global-insights-dashboard" 
-           target="_blank" class="btn btn-secondary">
-            📂 View Project Repository
-        </a>
-    </div>
-
-    <footer>
-        <p><strong>Academic Project | Data Visualization</strong></p>
-        <p>Analysis of NYC Airbnb Market (2019)</p>
-        <p style="font-size: 12px; margin-top: 10px;">© 2024 Airbnb NYC Market Analysis Dashboard</p>
-    </footer>
+<footer>
+    <p><strong>Academic Project | Data Visualization</strong></p>
+    <p>Analysis of NYC Airbnb Market (2019)</p>
+</footer>
 
 </div>
 
 </body>
 </html>
+
 
 
 
